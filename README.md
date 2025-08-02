@@ -24,7 +24,7 @@ colnames(legosets)
 
 ### 🧹Filtering out rows with missing or zero price/piece values
 ```r
-lego_analysis_data <- subset(legosets, !is.na(CA_retailPrice) & CA_retailPrice > 0 & pieces > 0)
+lego_analysis_data <- subset(legosets, !is.na(CA_retailPrice) & CA_retailPrice > 0 & pieces > 0 & year >= 2000)
 ```
 
 
@@ -54,7 +54,7 @@ plot <- ggplot(lego_analysis_data, aes(x = pieces, y = CA_retailPrice)) +
 # Display the plot
 print(plot)
 ```
-![Scatterplot of LEGO set price vs. pieces](Visualization for Cost of LEGO Sets by Number of Pieces.png)
+![Scatterplot of LEGO set price vs. pieces](Visualization_for_Cost_of_LEGO_Sets_by_Number_of_Pieces.png)
 
 
 ---
