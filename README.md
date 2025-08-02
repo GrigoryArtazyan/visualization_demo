@@ -54,3 +54,29 @@ plot <- ggplot(lego_analysis_data, aes(x = pieces, y = CA_retailPrice)) +
 # Display the plot
 print(plot)
 ```
+
+---
+
+### 📉 Linear Model Summary
+```r
+# Fit linear regression: price ~ number of pieces
+lm_model <- lm(CA_retailPrice ~ pieces, data = lego_analysis_data)
+
+# View coefficients
+coef(lm_model)
+
+# Full model summary
+summary(lm_model)
+```
+
+---
+📌 Interpretation
+The regression model suggests the following relationship:
+
+- Estimated Price ≈ 17.17 + 0.1014 × Pieces
+
+- The intercept of ~$17.17 CAD suggests a base cost associated with branding, packaging, or licensing.
+
+- Each additional piece adds approximately $0.10 CAD to the price.
+
+This supports the intuitive idea that larger sets tend to be more expensive, although this simple model does not account for other factors like theme, exclusivity, or licensing.
