@@ -18,3 +18,39 @@ data("legosets")
 
 # Inspect column names to find relevant fields
 colnames(legosets)
+```
+
+---
+
+### 🧹Filtering out rows with missing or zero price/piece values
+```r
+lego_analysis_data <- subset(legosets, !is.na(CA_retailPrice) & CA_retailPrice > 0 & pieces > 0)
+```
+
+
+---
+
+### 📈 Linear Regression Plot
+```r
+library(ggplot2)
+
+# Create regression plot
+plot <- ggplot(lego_analysis_data, aes(x = pieces, y = CA_retailPrice)) +
+  geom_point(alpha = 0.5, color = "#E4002B") +  # LEGO red points
+  geom_smooth(method = "lm", se = TRUE, color = "#0055A9", linewidth = 1.5) +  # LEGO blue line
+  labs(
+    title = "Cost of LEGO Sets by Number of Pieces\nLinear Model: Price ≈ 17.17 + 0.1014×Pieces",
+    x = "Number of LEGO Pieces",
+    y = "Retail Price in CAD"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 16, hjust = 0.5),
+    axis.title = element_text(face = "bold")
+  ) +
+  xlim(0, 6000) +
+  ylim(0, 800)
+
+# Display the plot
+print(plot)
+```
