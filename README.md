@@ -54,6 +54,8 @@ plot <- ggplot(lego_analysis_data, aes(x = pieces, y = CA_retailPrice)) +
 # Display the plot
 print(plot)
 ```
+![Scatterplot of LEGO set price vs. pieces](123.png)
+
 
 ---
 
@@ -80,3 +82,9 @@ The regression model suggests the following relationship:
 - Each additional piece adds approximately $0.10 CAD to the price.
 
 This supports the intuitive idea that larger sets tend to be more expensive, although this simple model does not account for other factors like theme, exclusivity, or licensing.
+
+--- 
+📁 Notes
+The legosets dataset contains over 19,000 sets from 1970–2024.
+
+This is a basic linear model; future improvements may involve multiple regression using more predictors (e.g., year, theme, minifigures).
