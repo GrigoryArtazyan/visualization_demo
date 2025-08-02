@@ -54,7 +54,7 @@ plot <- ggplot(lego_analysis_data, aes(x = pieces, y = CA_retailPrice)) +
 # Display the plot
 print(plot)
 ```
-![Scatterplot of LEGO set price vs. pieces](123.png)
+![Scatterplot of LEGO set price vs. pieces](Visualization for Cost of LEGO Sets by Number of Pieces.png)
 
 
 ---
